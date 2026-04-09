@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Receita { 
+  id    String  @id @default(uuid()) 
+  nome String  
+  tempoPreparo  Int
+  custoAproximado Decimal
+  ingredientes Ingrediente[]
+} 
+
+model Ingrediente { 
+  id    String  @id @default(uuid()) 
+  nome String
+  receita    Receita    @relation(fields: [receita_id], references: [id]) 
+  receita_id  String
+} 
