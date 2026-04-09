@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     fetchReceita(),
-      fetchIngrediente()
+    fetchIngrediente()
   }, []);
 
   const saveReceita = async () => {
@@ -126,6 +126,7 @@ function App() {
             <tr>
               <th>Nome</th>
               <th>Tempo de Preparo</th>
+              <th>Custo Aproximado</th>
               <th>Ações</th>
             </tr>
           </thead>
@@ -134,8 +135,9 @@ function App() {
               <tr key={r.id}>
                 <td>{r.nome}</td>
                 <td>{r.tempoPreparo}</td>
+                <td>{r.custoAproximado}</td>
                 <td>
-                  <button onClick={() => setFormReceita({id: r.id, nome: r.nome, tempoPreparo: r.tempoPreparo})}>Editar</button>
+                  <button onClick={() => setFormReceita({id: r.id, nome: r.nome, tempoPreparo: r.tempoPreparo, custoAproximado: r.custoAproximado})}>Editar</button>
                   <button onClick={() => deleteReceita(r.id)}>Deletar</button>
                 </td>
               </tr>
