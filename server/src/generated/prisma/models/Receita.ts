@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model Receita
@@ -28,56 +28,66 @@ export type AggregateReceita = {
 
 export type ReceitaAvgAggregateOutputType = {
   tempoPreparo: number | null
+  custoAproximado: runtime.Decimal | null
 }
 
 export type ReceitaSumAggregateOutputType = {
   tempoPreparo: number | null
+  custoAproximado: runtime.Decimal | null
 }
 
 export type ReceitaMinAggregateOutputType = {
   id: string | null
   nome: string | null
   tempoPreparo: number | null
+  custoAproximado: runtime.Decimal | null
 }
 
 export type ReceitaMaxAggregateOutputType = {
   id: string | null
   nome: string | null
   tempoPreparo: number | null
+  custoAproximado: runtime.Decimal | null
 }
 
 export type ReceitaCountAggregateOutputType = {
   id: number
   nome: number
   tempoPreparo: number
+  custoAproximado: number
   _all: number
 }
 
 
 export type ReceitaAvgAggregateInputType = {
   tempoPreparo?: true
+  custoAproximado?: true
 }
 
 export type ReceitaSumAggregateInputType = {
   tempoPreparo?: true
+  custoAproximado?: true
 }
 
 export type ReceitaMinAggregateInputType = {
   id?: true
   nome?: true
   tempoPreparo?: true
+  custoAproximado?: true
 }
 
 export type ReceitaMaxAggregateInputType = {
   id?: true
   nome?: true
   tempoPreparo?: true
+  custoAproximado?: true
 }
 
 export type ReceitaCountAggregateInputType = {
   id?: true
   nome?: true
   tempoPreparo?: true
+  custoAproximado?: true
   _all?: true
 }
 
@@ -171,6 +181,7 @@ export type ReceitaGroupByOutputType = {
   id: string
   nome: string
   tempoPreparo: number
+  custoAproximado: runtime.Decimal
   _count: ReceitaCountAggregateOutputType | null
   _avg: ReceitaAvgAggregateOutputType | null
   _sum: ReceitaSumAggregateOutputType | null
@@ -200,6 +211,7 @@ export type ReceitaWhereInput = {
   id?: Prisma.StringFilter<"Receita"> | string
   nome?: Prisma.StringFilter<"Receita"> | string
   tempoPreparo?: Prisma.IntFilter<"Receita"> | number
+  custoAproximado?: Prisma.DecimalFilter<"Receita"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   ingredientes?: Prisma.IngredienteListRelationFilter
 }
 
@@ -207,6 +219,7 @@ export type ReceitaOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   nome?: Prisma.SortOrder
   tempoPreparo?: Prisma.SortOrder
+  custoAproximado?: Prisma.SortOrder
   ingredientes?: Prisma.IngredienteOrderByRelationAggregateInput
 }
 
@@ -217,6 +230,7 @@ export type ReceitaWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.ReceitaWhereInput | Prisma.ReceitaWhereInput[]
   nome?: Prisma.StringFilter<"Receita"> | string
   tempoPreparo?: Prisma.IntFilter<"Receita"> | number
+  custoAproximado?: Prisma.DecimalFilter<"Receita"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   ingredientes?: Prisma.IngredienteListRelationFilter
 }, "id">
 
@@ -224,6 +238,7 @@ export type ReceitaOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   nome?: Prisma.SortOrder
   tempoPreparo?: Prisma.SortOrder
+  custoAproximado?: Prisma.SortOrder
   _count?: Prisma.ReceitaCountOrderByAggregateInput
   _avg?: Prisma.ReceitaAvgOrderByAggregateInput
   _max?: Prisma.ReceitaMaxOrderByAggregateInput
@@ -238,12 +253,14 @@ export type ReceitaScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"Receita"> | string
   nome?: Prisma.StringWithAggregatesFilter<"Receita"> | string
   tempoPreparo?: Prisma.IntWithAggregatesFilter<"Receita"> | number
+  custoAproximado?: Prisma.DecimalWithAggregatesFilter<"Receita"> | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ReceitaCreateInput = {
   id?: string
   nome: string
   tempoPreparo: number
+  custoAproximado: runtime.Decimal | runtime.DecimalJsLike | number | string
   ingredientes?: Prisma.IngredienteCreateNestedManyWithoutReceitaInput
 }
 
@@ -251,6 +268,7 @@ export type ReceitaUncheckedCreateInput = {
   id?: string
   nome: string
   tempoPreparo: number
+  custoAproximado: runtime.Decimal | runtime.DecimalJsLike | number | string
   ingredientes?: Prisma.IngredienteUncheckedCreateNestedManyWithoutReceitaInput
 }
 
@@ -258,6 +276,7 @@ export type ReceitaUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.StringFieldUpdateOperationsInput | string
   tempoPreparo?: Prisma.IntFieldUpdateOperationsInput | number
+  custoAproximado?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   ingredientes?: Prisma.IngredienteUpdateManyWithoutReceitaNestedInput
 }
 
@@ -265,6 +284,7 @@ export type ReceitaUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.StringFieldUpdateOperationsInput | string
   tempoPreparo?: Prisma.IntFieldUpdateOperationsInput | number
+  custoAproximado?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   ingredientes?: Prisma.IngredienteUncheckedUpdateManyWithoutReceitaNestedInput
 }
 
@@ -272,44 +292,52 @@ export type ReceitaCreateManyInput = {
   id?: string
   nome: string
   tempoPreparo: number
+  custoAproximado: runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ReceitaUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.StringFieldUpdateOperationsInput | string
   tempoPreparo?: Prisma.IntFieldUpdateOperationsInput | number
+  custoAproximado?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ReceitaUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.StringFieldUpdateOperationsInput | string
   tempoPreparo?: Prisma.IntFieldUpdateOperationsInput | number
+  custoAproximado?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ReceitaCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nome?: Prisma.SortOrder
   tempoPreparo?: Prisma.SortOrder
+  custoAproximado?: Prisma.SortOrder
 }
 
 export type ReceitaAvgOrderByAggregateInput = {
   tempoPreparo?: Prisma.SortOrder
+  custoAproximado?: Prisma.SortOrder
 }
 
 export type ReceitaMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nome?: Prisma.SortOrder
   tempoPreparo?: Prisma.SortOrder
+  custoAproximado?: Prisma.SortOrder
 }
 
 export type ReceitaMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nome?: Prisma.SortOrder
   tempoPreparo?: Prisma.SortOrder
+  custoAproximado?: Prisma.SortOrder
 }
 
 export type ReceitaSumOrderByAggregateInput = {
   tempoPreparo?: Prisma.SortOrder
+  custoAproximado?: Prisma.SortOrder
 }
 
 export type ReceitaScalarRelationFilter = {
@@ -327,6 +355,14 @@ export type IntFieldUpdateOperationsInput = {
   decrement?: number
   multiply?: number
   divide?: number
+}
+
+export type DecimalFieldUpdateOperationsInput = {
+  set?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  increment?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  decrement?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  multiply?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  divide?: runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ReceitaCreateNestedOneWithoutIngredientesInput = {
@@ -347,12 +383,14 @@ export type ReceitaCreateWithoutIngredientesInput = {
   id?: string
   nome: string
   tempoPreparo: number
+  custoAproximado: runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ReceitaUncheckedCreateWithoutIngredientesInput = {
   id?: string
   nome: string
   tempoPreparo: number
+  custoAproximado: runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ReceitaCreateOrConnectWithoutIngredientesInput = {
@@ -375,12 +413,14 @@ export type ReceitaUpdateWithoutIngredientesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.StringFieldUpdateOperationsInput | string
   tempoPreparo?: Prisma.IntFieldUpdateOperationsInput | number
+  custoAproximado?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 export type ReceitaUncheckedUpdateWithoutIngredientesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.StringFieldUpdateOperationsInput | string
   tempoPreparo?: Prisma.IntFieldUpdateOperationsInput | number
+  custoAproximado?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
 
@@ -418,6 +458,7 @@ export type ReceitaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   id?: boolean
   nome?: boolean
   tempoPreparo?: boolean
+  custoAproximado?: boolean
   ingredientes?: boolean | Prisma.Receita$ingredientesArgs<ExtArgs>
   _count?: boolean | Prisma.ReceitaCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["receita"]>
@@ -426,21 +467,24 @@ export type ReceitaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   id?: boolean
   nome?: boolean
   tempoPreparo?: boolean
+  custoAproximado?: boolean
 }, ExtArgs["result"]["receita"]>
 
 export type ReceitaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   nome?: boolean
   tempoPreparo?: boolean
+  custoAproximado?: boolean
 }, ExtArgs["result"]["receita"]>
 
 export type ReceitaSelectScalar = {
   id?: boolean
   nome?: boolean
   tempoPreparo?: boolean
+  custoAproximado?: boolean
 }
 
-export type ReceitaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nome" | "tempoPreparo", ExtArgs["result"]["receita"]>
+export type ReceitaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nome" | "tempoPreparo" | "custoAproximado", ExtArgs["result"]["receita"]>
 export type ReceitaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   ingredientes?: boolean | Prisma.Receita$ingredientesArgs<ExtArgs>
   _count?: boolean | Prisma.ReceitaCountOutputTypeDefaultArgs<ExtArgs>
@@ -457,6 +501,7 @@ export type $ReceitaPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     id: string
     nome: string
     tempoPreparo: number
+    custoAproximado: runtime.Decimal
   }, ExtArgs["result"]["receita"]>
   composites: {}
 }
@@ -884,6 +929,7 @@ export interface ReceitaFieldRefs {
   readonly id: Prisma.FieldRef<"Receita", 'String'>
   readonly nome: Prisma.FieldRef<"Receita", 'String'>
   readonly tempoPreparo: Prisma.FieldRef<"Receita", 'Int'>
+  readonly custoAproximado: Prisma.FieldRef<"Receita", 'Decimal'>
 }
     
 

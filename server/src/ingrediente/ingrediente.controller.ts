@@ -1,5 +1,5 @@
 import {Request, Response} from "express";
-import ingredienteRepository from "./ingrediente.repository.js";
+import ingredienteRepository from "./ingrediente.repository";
 
 class IngredienteController{
     async criarIngrediente(req: Request, res: Response){

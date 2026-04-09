@@ -1,7 +1,7 @@
 import express from "express"
 import cors from "cors"
-import ingrediente from "./ingrediente/ingrediente.routes.js";
-import receita from "./receita/receita.routes.js";
+import ingrediente from "./ingrediente/ingrediente.routes";
+import receita from "./receita/receita.routes";
 
 export const app = express();
 

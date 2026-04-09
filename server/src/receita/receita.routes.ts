@@ -1,5 +1,5 @@
 import Router from "express";
-import receitaController from "./receita.controller.js";
+import receitaController from "./receita.controller";
 
 const router = Router();
 const path = "/receita";

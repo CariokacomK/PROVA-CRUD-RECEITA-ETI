@@ -1,5 +1,5 @@
-import { Prisma } from "../generated/prisma/client.js";
-import {prisma} from "../lib/prisma.js";
+import { Prisma } from "../generated/prisma/client";
+import {prisma} from "../lib/prisma";
 
 class ReceitaRepository{
     async create(data: Prisma.ReceitaCreateInput){

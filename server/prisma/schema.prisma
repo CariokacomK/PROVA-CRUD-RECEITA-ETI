@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client"
-  output   = "../generated/prisma"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -18,6 +18,6 @@ model Receita {
 model Ingrediente { 
   id    String  @id @default(uuid()) 
   nome String
-  receita    Receita    @relation(fields: [receita_id], references: [id]) 
+  receita    Receita    @relation(fields: [receita_id], references: [id], onDelete: Cascade) 
   receita_id  String
 } 

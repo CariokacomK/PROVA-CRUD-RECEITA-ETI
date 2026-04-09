@@ -1,5 +1,5 @@
 import {Request, Response} from "express";
-import receitaRepository from "./receita.repository.js";
+import receitaRepository from "./receita.repository";
 
 class ReceitaController{
     async criarReceita(req: Request, res: Response){
