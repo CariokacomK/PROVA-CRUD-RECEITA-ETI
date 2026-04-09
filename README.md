@@ -38,6 +38,12 @@ cd client/
 npm run dev
 ```
 
+Env
+```bash
+# Não há dados sensiveis neste .env
+DATABASE_URL="postgresql://postgres:senha_segura@localhost:5432/postgres?schema=public"
+```
+
 
 ## License
 
