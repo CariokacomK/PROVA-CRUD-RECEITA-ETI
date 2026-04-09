@@ -9,3 +9,5 @@ router.get(`${path}/:id`, ingredienteController.listarIngredientePorId);
 router.get(path, ingredienteController.listarIngredientes);
 router.put(`${path}/:id`, ingredienteController.atualizarIngrediente);
 router.delete(`${path}/:id`, ingredienteController.deletarIngrediente);
+
+export default router;

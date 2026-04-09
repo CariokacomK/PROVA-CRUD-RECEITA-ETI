@@ -5,3 +5,7 @@ const PORT = 3001
 app.listen(PORT, () => {
   console.log(`Rodando na porta: ${PORT}`)
 })
+
+app.get('/', (req, res) => {
+  res.send('Funcionando!')
+})
